@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Para meu Amorzinho</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      
+    }
+
+    body {
+      
+      background-color: #050d1a; /* azul-marinho mais escuro */
+      color: #f9c6d3; /* rosa clarinho */
+      text-align: center;
+      padding: 30px;
+      position: relative;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    .spotlight {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, transparent 200px);
+      transition: background-position 0.1s ease;
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      color: #ffc1d3;
+      font-size: 36px;
+    }
+
+    .message {
+      margin: 20px auto;
+      max-width: 700px;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    .prayer {
+      font-style: italic;
+      margin-top: 40px;
+      font-size: 18px;
+    }
+
+    audio {
+      margin-top: 30px;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+
+   .timeline-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #f9c6d3;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.timeline-block {
+  position: relative;
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.timeline-block.left {
+  left: 0;
+}
+
+.timeline-block.right {
+  left: 50%;
+}
+
+.timeline-content {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.03);
+  transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: scale(1.02);
+}
+
+.timeline-content img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #f9c6d3;
+}
+
+.timeline-content h3 {
+  color: #ffc1d3;
+  margin-top: 0;
+}
+
+.timeline-content p {
+  color: #f9c6d3;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .timeline-block {
+    width: 100%;
+    left: 0 !important;
+    margin-bottom: 40px;
+  }
+
+  .timeline-line {
+    left: 20px;
+  }
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.foto-amorzinho {
+  margin-top: 20px;
+  max-width: 300px;
+  width: 80%;
+  border-radius: 15px;
+  border: 3px solid #f9c6d3;
+  box-shadow: 0 0 10px rgba(255, 192, 203, 0.3);
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="spotlight" id="spotlight"></div>
+
+  <div class="content">
+    <h1>Para meu Amorzinho 💖</h1>
+    <img src="minha-mulher.jpeg" alt="Minha Amada" class="foto-amorzinho" />
+
+    <div class="message">
+      <p>Bom dia, meu amor! Feliz Dia dos Namorados. Mesmo longe, meu coração está com você 💌</p>
+      <p>Você é resposta de oração, luz na minha vida, e motivo da minha alegria diária.</p>
+      <p><strong>“O Senhor te abençoe e te guarde; o Senhor faça resplandecer o rosto sobre ti.” – Números 6:24-25</strong></p>
+    </div>
+
+    <div class="prayer">
+      <p>✨ Minha oração por você ✨</p>
+      <p>“Que a paz de Deus, que excede todo entendimento, guarde teu coração. Que Ele te fortaleça em cada passo. Estarei sempre contigo em oração e amor.”</p>
+    </div>
+
+    <audio id="musica" autoplay loop>
+      <source src="musica.mp3" type="audio/mpeg" />
+      Seu navegador não suporta áudio.
+    </audio>
+
+    <div class="timeline-container">
+  <div class="timeline-line"></div>
+
+  <div class="timeline-block left hidden">
+    <div class="timeline-content">
+      
+      <h3>Nosso Começo</h3>
+      <p>A primeira vez que nossas palavras se cruzaram. Uma semente de algo muito maior começou ali.</p>
+    </div>
+  </div>
+
+  <div class="timeline-block right hidden">
+    <div class="timeline-content">
+      
+      <h3>Primeiras Risadas</h3>
+      <p>A leveza, os memes, os olhares que sorriam mesmo pelo celular. Tudo foi tão natural.</p>
+    </div>
+  </div>
+
+  <div class="timeline-block left hidden">
+    <div class="timeline-content">
+      
+      <h3>Nosso Momento com Deus</h3>
+      <p>Quando começamos a orar juntos, senti que Deus estava nos escrevendo.</p>
+    </div>
+  </div>
+
+  <div class="timeline-block right hidden">
+    <div class="timeline-content">
+      
+      <h3>Sonhos Compartilhados</h3>
+      <p>Falamos de planos, viagens, futuros possíveis. Te imaginar comigo neles faz tudo fazer sentido.</p>
+    </div>
+  </div>
+
+  <div class="timeline-block left hidden">
+  <div class="timeline-content">
+
+    <h3>O Que Ainda Vamos Viver</h3>
+    <p>
+      Essa história está só começando. Ainda teremos sorrisos que nem sabemos que existem, viagens que ainda não planejamos, orações que fortalecerão nossos passos, e um futuro escrito com fé, cuidado e amor.  
+      <br><br>
+      Seja o que for, quero viver tudo com você. 💖
+    </p>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+    <footer>
+      Criado com carinho pelo seu principe 💌
+    </footer>
+  </div>
+
+  <script>
+    // Volume reduzido
+    window.addEventListener('load', function () {
+      const musica = document.getElementById('musica');
+      musica.volume = 0.2;
+      musica.play().catch(() => {
+        const tentarTocar = () => {
+          musica.play();
+          document.removeEventListener('click', tentarTocar);
+        };
+        document.addEventListener('click', tentarTocar);
+      });
+    });
+
+    // Clarear onde o mouse está
+    const spotlight = document.getElementById('spotlight');
+    document.addEventListener('mousemove', e => {
+      spotlight.style.background = `radial-gradient(circle at ${e.clientX}px ${e.clientY}px, rgba(255, 255, 255, 0.03), transparent 200px)`;
+    });
+  </script>
+
+  <script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('.timeline-block').forEach(block => {
+    observer.observe(block);
+  });
+</script>
+
+</body>
+</html>

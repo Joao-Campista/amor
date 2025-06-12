@@ -170,11 +170,53 @@
   box-shadow: 0 0 10px rgba(255, 192, 203, 0.3);
 }
 
+#intro-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #050d1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 1s ease;
+}
+
+#intro-screen.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#start-button {
+  padding: 15px 30px;
+  font-size: 20px;
+  font-family: 'Dancing Script', cursive;
+  color: #050d1a;
+  background-color: #f9c6d3;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+#start-button:hover {
+  transform: scale(1.05);
+}
+
+
 
   </style>
 </head>
 <body>
   <div class="spotlight" id="spotlight"></div>
+
+  <div id="intro-screen">
+  <button id="start-button">Clique para começar</button>
+</div>
+
 
   <div class="content">
     <h1>Para meu Amorzinho 💖</h1>
@@ -291,6 +333,22 @@
     observer.observe(block);
   });
 </script>
+
+<script>
+  document.getElementById('start-button').addEventListener('click', function () {
+    const intro = document.getElementById('intro-screen');
+    intro.classList.add('hidden');
+
+    // Liberar rolagem se você quiser
+    document.body.style.overflow = 'auto';
+  });
+
+  // Opcional: esconder scroll durante a intro
+  window.addEventListener('DOMContentLoaded', () => {
+    document.body.style.overflow = 'hidden';
+  });
+</script>
+
 
 </body>
 </html>
